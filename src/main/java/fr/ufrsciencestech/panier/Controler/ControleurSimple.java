@@ -55,5 +55,16 @@ public class ControleurSimple extends Controleur{
         System.out.println(o.toString());
         
     }
+    public void Moins(JTextField jTextField1 , Panier p){
+        this.panier=p;
+        try{
+            
+            this.panier.retire();
+        }catch(PanierVideException e){
+            System.out.println(e.toString());
+        };
+        jTextField1.setText("le panier contient "+this.panier.getTaille()+" fruits");
+        System.out.println("le panier contient "+this.panier.getTaille()+" fruits");
+    }
     
 }

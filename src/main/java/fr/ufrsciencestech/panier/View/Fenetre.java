@@ -119,6 +119,8 @@ public class Fenetre extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
+        cont.Moins(jTextField1,panier);
+        /*
         try{
             
             this.panier.retire();
@@ -127,6 +129,7 @@ public class Fenetre extends javax.swing.JFrame {
         };
         jTextField1.setText("le panier contient "+this.panier.getTaille()+" fruits");
         System.out.println("le panier contient "+this.panier.getTaille()+" fruits");
+        */
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
