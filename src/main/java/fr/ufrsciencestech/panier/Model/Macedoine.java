@@ -8,13 +8,10 @@ import fr.ufrsciencestech.panier.Model.Fruit;
 
 import java.util.ArrayList;
 
-/**
- *
- * @author me253818
- */
+
 public class Macedoine implements Fruit{
     private ArrayList<Fruit> fruits ;
-    private bool seedless;
+    private boolean seedless;
     
         public Macedoine(Fruit f){
             this.fruits = new ArrayList<Fruit>();
@@ -23,22 +20,23 @@ public class Macedoine implements Fruit{
         }
         
         //ajout de fruit
-        public ajoute(Fruit f){
+        public void ajoute(Fruit f){
             this.fruits.add(f);
         }
         
         public String toString(){
             String res ="";
             for(int i = 0 ; i<fruits.size();i++){
-                    Fruit f = fruits.
+                    Fruit f = fruits.get(i);
                     res = res + f.toString();
         }
             return res;
         }
         
         
-        public double getprix(){
-            double totale;
+        @Override
+        public double getPrix(){
+            double totale = 0;
             for(int i = 0 ;i<this.fruits.size();i++){
                 Fruit f = (Fruit)fruits.get(i);
                 totale = totale + f.getPrix();
@@ -46,6 +44,23 @@ public class Macedoine implements Fruit{
             }
             return totale;
         }
+
+    @Override
+    public boolean isSeedless() {
+        boolean res = false;
+            for(int i = 0 ; i<fruits.size();i++){
+                if(fruits.get(i).isSeedless() == true){
+                    res = true;
+                }
+            }
+            return res;
+    }
+    
+    @Override
+    public String getOrigine() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
         
         
 }
