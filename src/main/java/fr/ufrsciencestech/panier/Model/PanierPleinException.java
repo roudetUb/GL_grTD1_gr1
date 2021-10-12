@@ -13,7 +13,7 @@ public class PanierPleinException extends Exception {
     
     public PanierPleinException()
     {
-	super("Impossible d'ajouter une orange dans le panier qui est plein !");
+	super("Impossible d'ajouter un fruit dans le panier qui est plein !");
     }
 
 }

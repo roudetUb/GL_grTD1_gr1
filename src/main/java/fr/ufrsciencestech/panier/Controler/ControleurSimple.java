@@ -6,16 +6,23 @@
 package fr.ufrsciencestech.panier.Controler;
 
 
+import fr.ufrsciencestech.panier.Model.*;
+import fr.ufrsciencestech.panier.Model.Panier;
 import fr.ufrsciencestech.panier.Model.PanierPleinException;
 import fr.ufrsciencestech.panier.Model.PanierVideException;
 import java.awt.Component;
 import java.awt.event.ActionEvent;
+import javax.swing.JTextField;
 
 /**
  *
  * @author celine
  */
 public class ControleurSimple extends Controleur{
+    private Panier panier;
+    
+    public ControleurSimple(){
+    }
     
     @Override
     public void actionPerformed(ActionEvent e){
@@ -33,4 +40,20 @@ public class ControleurSimple extends Controleur{
         }
             
     }
+    
+    public void Plus(Object o,JTextField jTextField1 , Panier p){
+        this.panier=p;
+        try{
+            
+            this.panier.ajoute((Fruit)o);
+        }catch(PanierPleinException e){
+            //e.printStackTrace();
+            System.out.println(e.toString());
+        };
+        jTextField1.setText("le panier contient "+this.panier.getTaille()+" fruits");
+        System.out.println("le panier contient "+this.panier.getTaille()+" fruits");
+        System.out.println(o.toString());
+        
+    }
+    
 }

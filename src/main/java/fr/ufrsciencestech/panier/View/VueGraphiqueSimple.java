@@ -14,7 +14,19 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 
 /**
- *
+ * // TODO add your handling code here:
+        //Fruit o=jList1.getModel().getElementAt(jList1.getSelectedIndex());
+        Object o=dlm.getElementAt(jList1.getSelectedIndex());
+        try{
+            
+            this.panier.ajout((Fruit)o);
+        }catch(PanierPleinException e){
+            //e.printStackTrace();
+            System.out.println(e.toString());
+        };
+        jTextField1.setText("le panier contient "+this.panier.getTaillePanier()+" fruits");
+        System.out.println("le panier contient "+this.panier.getTaillePanier()+" fruits");
+        System.out.println(o.toString());
  * @author celine
  */
 public class VueGraphiqueSimple extends JFrame implements VueGraphique {
